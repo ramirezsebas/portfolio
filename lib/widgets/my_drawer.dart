@@ -4,7 +4,12 @@ import 'package:my_portfolio/helpers/helpers.dart';
 class MyDrawer extends StatelessWidget {
   const MyDrawer({
     super.key,
+    required this.onToggleTheme,
+    required this.themeIcon,
   });
+
+  final VoidCallback onToggleTheme;
+  final IconData themeIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +45,10 @@ class MyDrawer extends StatelessWidget {
                 onPressed: () {},
               ),
               IconButton(
-                icon: const Icon(Icons.nightlight_outlined),
-                onPressed: () {},
+                icon: Icon(
+                  themeIcon,
+                ),
+                onPressed: onToggleTheme,
               ),
             ],
           ),

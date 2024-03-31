@@ -1,22 +1,30 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_portfolio/extensions/extensions.dart';
 import 'package:my_portfolio/helpers/helpers.dart';
 import 'package:my_portfolio/layouts/layouts.dart';
+import 'package:my_portfolio/providers/providers.dart';
 import 'package:my_portfolio/widgets/widgets.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends ConsumerWidget {
   HomePage({super.key});
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final isMobileSize = MediaQuery.of(context).isMobileSize;
 
     return Scaffold(
       key: scaffoldKey,
-      endDrawer: const MyDrawer(),
+      endDrawer: MyDrawer(
+        themeIcon: ref.watch(themeModeNotifierProvider) == ThemeMode.light
+            ? Icons.light_mode_outlined
+            : Icons.dark_mode_outlined,
+        onToggleTheme: () =>
+            ref.read(themeModeNotifierProvider.notifier).toggle(),
+      ),
       body: Column(
         children: [
           NavBar(
@@ -57,8 +65,13 @@ class HomePage extends StatelessWidget {
                   onPressed: () {},
                 ),
                 IconButton(
-                  icon: const Icon(Icons.nightlight_outlined),
-                  onPressed: () {},
+                  icon: Icon(
+                    ref.watch(themeModeNotifierProvider) == ThemeMode.light
+                        ? Icons.light_mode_outlined
+                        : Icons.dark_mode_outlined,
+                  ),
+                  onPressed: () =>
+                      ref.read(themeModeNotifierProvider.notifier).toggle(),
                 ),
               ]
             ],
