@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:my_portfolio/gen/assets.gen.dart';
 import 'package:my_portfolio/helpers/helpers.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -16,12 +18,18 @@ class MyDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: [
-          const DrawerHeader(
+          DrawerHeader(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CircleAvatar(),
-                Text("Matias Ramirez"),
+                CircleAvatar(
+                  backgroundImage: Assets.images.avatar.provider(),
+                  radius: 50,
+                ),
+                Text(
+                  "Matias Ramirez",
+                  style: Theme.of(context).textTheme.headlineSmall,
+                ),
               ],
             ),
           ),
@@ -33,6 +41,7 @@ class MyDrawer extends StatelessWidget {
                 return ListTile(
                   leading: navItem.icon,
                   title: Text(navItem.label),
+                  onTap: () {},
                 );
               },
             ),
@@ -40,10 +49,6 @@ class MyDrawer extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              IconButton(
-                icon: const Icon(Icons.search_outlined),
-                onPressed: () {},
-              ),
               IconButton(
                 icon: Icon(
                   themeIcon,
