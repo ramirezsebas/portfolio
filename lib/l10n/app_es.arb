@@ -1,0 +1,18 @@
+{
+    "myPortfolio": "Mi Portafolio",
+    "@myPortfolio": {
+        "description": "Mi Portafolio titulo"
+    },
+    "projects": "Proyectos",
+    "@projects": {
+      "description": "Proyectos nav texto"
+    },
+    "experience": "Experiencia",
+    "@experience": {
+        "description": "Experiencia nav texto"
+    },
+    "education": "Educación",
+    "@education": {
+        "description": "Educación nav texto"
+    }
+}

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/layouts/layouts.dart';
@@ -8,6 +9,7 @@ import 'package:my_portfolio/pages/home_page.dart';
 import 'package:my_portfolio/pages/projects_page.dart';
 import 'package:my_portfolio/providers/providers.dart';
 import 'package:my_portfolio/themes/themes.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigatorKey = GlobalKey<NavigatorState>();
@@ -57,6 +59,16 @@ class MyApp extends ConsumerWidget {
       themeMode: ref.watch(themeModeNotifierProvider) == ThemeMode.light
           ? ThemeMode.light
           : ThemeMode.dark,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en'),
+        Locale('es'),
+      ],
       theme: lightTheme,
       darkTheme: darkTheme,
       debugShowCheckedModeBanner: false,
