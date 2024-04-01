@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/pages/home_page.dart';
 import 'package:my_portfolio/providers/providers.dart';
+import 'package:my_portfolio/themes/themes.dart';
 
 void main() => runApp(ProviderScope(child: MyApp()));
 
@@ -26,6 +27,8 @@ class MyApp extends ConsumerWidget {
       themeMode: ref.watch(themeModeNotifierProvider) == ThemeMode.light
           ? ThemeMode.light
           : ThemeMode.dark,
+      theme: lightTheme,
+      darkTheme: darkTheme,
       debugShowCheckedModeBanner: false,
       title: 'Material App',
     );
