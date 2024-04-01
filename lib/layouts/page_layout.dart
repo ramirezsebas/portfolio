@@ -14,6 +14,7 @@ class PageLayout extends ConsumerWidget {
   });
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final scrollController = ScrollController();
   final Widget body;
 
   @override
@@ -86,13 +87,14 @@ class PageLayout extends ConsumerWidget {
             ),
           ),
           const Divider(),
-          const Expanded(
+          Expanded(
             child: SingleChildScrollView(
-              padding: EdgeInsets.symmetric(
+              controller: scrollController,
+              padding: const EdgeInsets.symmetric(
                 horizontal: 20,
                 vertical: 30,
               ),
-              child: Body(),
+              child: const Body(),
             ),
           ),
         ],
