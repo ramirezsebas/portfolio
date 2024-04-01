@@ -30,22 +30,58 @@ class MyApp extends ConsumerWidget {
           GoRoute(
             path: '/',
             name: 'home',
-            builder: (context, state) => const HomePage(),
+            pageBuilder: (context, state) {
+              return CustomTransitionPage(
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+                key: const ValueKey('home'),
+                child: const HomePage(),
+              );
+            },
           ),
           GoRoute(
             path: '/experience',
             name: 'experience',
-            builder: (context, state) => const ExperiencePage(),
+            pageBuilder: (context, state) {
+              return CustomTransitionPage(
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+                key: const ValueKey('experience'),
+                child: const ExperiencePage(),
+              );
+            },
           ),
           GoRoute(
             path: '/education',
             name: 'education',
-            builder: (context, state) => const EducationPage(),
+            pageBuilder: (context, state) {
+              return CustomTransitionPage(
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+                key: const ValueKey('education'),
+                child: const EducationPage(),
+              );
+            },
           ),
           GoRoute(
             path: '/projects',
             name: 'projects',
-            builder: (context, state) => const ProjectsPage(),
+            pageBuilder: (context, state) {
+              return CustomTransitionPage(
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+                key: const ValueKey('projects'),
+                child: const ProjectsPage(),
+              );
+            },
           ),
         ],
       ),
@@ -72,7 +108,7 @@ class MyApp extends ConsumerWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       debugShowCheckedModeBanner: false,
-      title: 'Material App',
+      title: 'My Portfolio',
     );
   }
 }
