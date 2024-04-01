@@ -1,39 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_portfolio/layouts/layouts.dart';
-import 'package:my_portfolio/layouts/page_layout.dart';
 import 'package:my_portfolio/widgets/widgets.dart';
 
-class HomePage extends ConsumerWidget {
-  HomePage({super.key});
-
-  final scaffoldKey = GlobalKey<ScaffoldState>();
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return PageLayout(
-      body: BodyLayout(
-        childrenForMobile: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width,
-            child: const NameBio(
-              name: "Matias Ramirez",
-              bio:
-                  "I am Matías Sebastián Ramírez Brizuela, an emerging software engineer with three years of experience. Specializing in Flutter and Dart for mobile apps, I thrive on problem-solving and collaborative documentation, poised for greater success.",
-            ),
-          ),
-        ],
-        childrenForDesktop: const [
-          Expanded(
-            flex: 2,
-            child: NameBio(
-              name: "Matias Ramirez",
-              bio:
-                  "I am Matías Sebastián Ramírez Brizuela, an emerging software engineer with three years of experience. Specializing in Flutter and Dart for mobile apps, I thrive on problem-solving and collaborative documentation, poised for greater success.",
-            ),
-          ),
-        ],
-      ),
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        NameBio(
+          name: "Matias Ramirez",
+          bio:
+              "I am Matías Sebastián Ramírez Brizuela, a software engineer with three years of experience in the technology sector. Completing the computer engineering degree at the Polytechnic Faculty, National University of Asunción. I specialize in mobile app development with Flutter and Dart, as well as web development with Angular and React. I enjoy solving complex problems with creativity and precision. Furthermore, I am proficient in Node.js with JavaScript and TypeScript, along with frameworks like Express and Fastify. I am committed to excellence and collaboration in my work.",
+        ),
+      ],
     );
   }
 }
