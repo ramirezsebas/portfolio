@@ -5,10 +5,13 @@ class ProjectsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        Text("Resume"),
-        SizedBox(height: 20),
+        Text(
+          "Projects",
+          style: Theme.of(context).textTheme.displayLarge,
+        ),
+        const SizedBox(height: 20),
       ],
     );
   }

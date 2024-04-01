@@ -5,10 +5,13 @@ class EducationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        Text("Education"),
-        SizedBox(height: 20),
+        Text(
+          "Education",
+          style: Theme.of(context).textTheme.displayLarge,
+        ),
+        const SizedBox(height: 20),
       ],
     );
   }
