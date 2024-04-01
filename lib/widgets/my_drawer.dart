@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/gen/assets.gen.dart';
 import 'package:my_portfolio/helpers/helpers.dart';
 
@@ -41,7 +41,7 @@ class MyDrawer extends StatelessWidget {
                 return ListTile(
                   leading: navItem.icon,
                   title: Text(navItem.label),
-                  onTap: () {},
+                  onTap: () => GoRouter.of(context).goNamed(navItem.pathName),
                 );
               },
             ),
