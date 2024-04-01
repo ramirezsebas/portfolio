@@ -23,6 +23,9 @@ class NameBio extends StatelessWidget {
           style: Theme.of(context).textTheme.displayLarge,
           textAlign: TextAlign.center,
         ),
+        const SizedBox(
+          height: 30,
+        ),
         Text(
           bio,
           style: Theme.of(context).textTheme.bodyLarge,
