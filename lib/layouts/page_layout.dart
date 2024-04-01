@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/extensions/extensions.dart';
 import 'package:my_portfolio/helpers/helpers.dart';
+import 'package:my_portfolio/pages/pages.dart';
 import 'package:my_portfolio/providers/providers.dart';
 import 'package:my_portfolio/widgets/widgets.dart';
 
@@ -85,17 +86,40 @@ class PageLayout extends ConsumerWidget {
             ),
           ),
           const Divider(),
-          Expanded(
+          const Expanded(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(
+              padding: EdgeInsets.symmetric(
                 horizontal: 20,
                 vertical: 30,
               ),
-              child: body,
+              child: Body(),
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class Body extends StatelessWidget {
+  const Body({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        NameBio(
+          name: "Matias Ramirez",
+          bio:
+              "I am Matías Sebastián Ramírez Brizuela, a software engineer with three years of experience in the technology sector. Completing the computer engineering degree at the Polytechnic Faculty, National University of Asunción. I specialize in mobile app development with Flutter and Dart, as well as web development with Angular and React. I enjoy solving complex problems with creativity and precision. Furthermore, I am proficient in Node.js with JavaScript and TypeScript, along with frameworks like Express and Fastify. I am committed to excellence and collaboration in my work.",
+        ),
+        Divider(),
+        ProjectsPage(),
+        Divider(),
+        ExperiencePage(),
+        Divider(),
+        EducationPage(),
+      ],
     );
   }
 }
