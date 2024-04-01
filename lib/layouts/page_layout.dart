@@ -85,9 +85,14 @@ class PageLayout extends ConsumerWidget {
             ),
           ),
           const Divider(),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-            child: Expanded(child: body),
+          Expanded(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 30,
+              ),
+              child: body,
+            ),
           ),
         ],
       ),
