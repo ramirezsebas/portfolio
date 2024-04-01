@@ -1,4 +1,3 @@
-import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_portfolio/extensions/extensions.dart';
@@ -87,22 +86,6 @@ class HomePage extends ConsumerWidget {
               child: BodyLayout(
                 childrenForMobile: [
                   SizedBox(
-                    height: 200,
-                    child: Swiper(
-                      itemBuilder: (BuildContext context, int index) {
-                        return Image.network(
-                          "https://via.placeholder.com/350x150",
-                          fit: BoxFit.fill,
-                        );
-                      },
-                      itemCount: 3,
-                      control: const SwiperControl(),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: const NameBio(
                       name: "Matias Ramirez",
@@ -111,25 +94,13 @@ class HomePage extends ConsumerWidget {
                     ),
                   ),
                 ],
-                childrenForDesktop: [
-                  const Expanded(
+                childrenForDesktop: const [
+                  Expanded(
                     flex: 2,
                     child: NameBio(
                       name: "Matias Ramirez",
                       bio:
                           "I am Matías Sebastián Ramírez Brizuela, an emerging software engineer with three years of experience. Specializing in Flutter and Dart for mobile apps, I thrive on problem-solving and collaborative documentation, poised for greater success.",
-                    ),
-                  ),
-                  Expanded(
-                    child: Swiper(
-                      itemBuilder: (BuildContext context, int index) {
-                        return Image.network(
-                          "https://via.placeholder.com/350x150",
-                          fit: BoxFit.fill,
-                        );
-                      },
-                      itemCount: 3,
-                      control: const SwiperControl(),
                     ),
                   ),
                 ],
