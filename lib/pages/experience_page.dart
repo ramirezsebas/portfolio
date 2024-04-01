@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/widgets/widgets.dart';
 
 class ExperiencePage extends StatelessWidget {
   const ExperiencePage({super.key});
