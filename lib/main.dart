@@ -7,6 +7,9 @@ import 'package:my_portfolio/pages/education_page.dart';
 import 'package:my_portfolio/pages/experience_page.dart';
 import 'package:my_portfolio/pages/home_page.dart';
 import 'package:my_portfolio/pages/projects_page.dart';
+import 'package:my_portfolio/pages/resume_page.dart';
+import 'package:my_portfolio/pages/search_page.dart';
+import 'package:my_portfolio/pages/skills_page.dart';
 import 'package:my_portfolio/providers/providers.dart';
 import 'package:my_portfolio/themes/themes.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -38,6 +41,20 @@ class MyApp extends ConsumerWidget {
                 },
                 key: const ValueKey('home'),
                 child: const HomePage(),
+              );
+            },
+          ),
+          GoRoute(
+            path: '/skills',
+            name: 'skills',
+            pageBuilder: (context, state) {
+              return CustomTransitionPage(
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+                key: const ValueKey('skills'),
+                child: const SkillsPage(),
               );
             },
           ),
@@ -80,6 +97,34 @@ class MyApp extends ConsumerWidget {
                 },
                 key: const ValueKey('projects'),
                 child: const ProjectsPage(),
+              );
+            },
+          ),
+          GoRoute(
+            path: '/resume',
+            name: 'resume',
+            pageBuilder: (context, state) {
+              return CustomTransitionPage(
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+                key: const ValueKey('resume'),
+                child: const ResumePage(),
+              );
+            },
+          ),
+          GoRoute(
+            path: '/search',
+            name: 'search',
+            pageBuilder: (context, state) {
+              return CustomTransitionPage(
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+                key: const ValueKey('search'),
+                child: SearchPage(),
               );
             },
           ),
