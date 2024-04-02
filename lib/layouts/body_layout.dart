@@ -16,8 +16,10 @@ class BodyLayout extends StatelessWidget {
     final isMobileSize = MediaQuery.of(context).isMobileSize;
 
     if (isMobileSize) {
-      return Column(
-        children: childrenForMobile,
+      return SingleChildScrollView(
+        child: Column(
+          children: childrenForMobile,
+        ),
       );
     }
 
