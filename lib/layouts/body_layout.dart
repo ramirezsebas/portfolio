@@ -21,11 +21,8 @@ class BodyLayout extends StatelessWidget {
       );
     }
 
-    return SizedBox(
-      height: 500,
-      child: Row(
-        children: childrenForDesktop,
-      ),
+    return Row(
+      children: childrenForDesktop,
     );
   }
 }
