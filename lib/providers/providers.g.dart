@@ -6,7 +6,7 @@ part of 'providers.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$themeModeNotifierHash() => r'ba51c09ae9d084fbab394543e307b88244fdaef4';
+String _$themeModeNotifierHash() => r'cb824a4db7fe948ecac1b20f3ee3aba8cb6cc526';
 
 /// See also [ThemeModeNotifier].
 @ProviderFor(ThemeModeNotifier)
@@ -23,7 +23,7 @@ final themeModeNotifierProvider =
 
 typedef _$ThemeModeNotifier = AutoDisposeNotifier<ThemeMode>;
 String _$generalSearchNotifierHash() =>
-    r'c5de4a0638a5235aec635faa39012a72ed107441';
+    r'db8b94e5a27b23215c16e075e498e315f5c6f18b';
 
 /// See also [GeneralSearchNotifier].
 @ProviderFor(GeneralSearchNotifier)
