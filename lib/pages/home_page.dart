@@ -36,25 +36,20 @@ class HomePage extends StatelessWidget {
               return Image.asset(skill.icon);
             },
             autoplay: true,
-            control: isMobileSize ? const SwiperControl() : null,
           ),
         ),
       ],
       childrenForMobile: [
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.3,
-          width: MediaQuery.of(context).size.width * 0.7,
+          width: 200,
+          height: 200,
           child: Swiper(
             itemCount: skills.length,
             itemBuilder: (context, index) {
-              return Assets.icons.values[index].image(
-                width: 200,
-                height: 200,
-                fit: BoxFit.contain,
-              );
+              final skill = skills[index];
+              return Image.asset(skill.icon);
             },
             autoplay: true,
-            control: const SwiperControl(),
           ),
         ),
         SizedBox(
