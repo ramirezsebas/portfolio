@@ -38,33 +38,36 @@ class NameBio extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        Wrap(
-          spacing: 10,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: socialMedias
               .map(
-                (skill) => ElevatedButton.icon(
-                  onPressed: () {
-                    final uri = Uri.parse(skill.url);
-                    launchUrl(uri)
-                        .then((value) => debugPrint("Launched ${skill.name}"))
-                        .catchError((error) => debugPrint(
-                            "Error launching ${skill.name}: $error"));
-                  },
-                  icon: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      child: Image.asset(
-                        skill.icon,
-                        color: isDarkMode
-                            ? Colors.white
-                            : isDarkMode
-                                ? Colors.black
-                                : null,
+                (skill) => Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      final uri = Uri.parse(skill.url);
+                      launchUrl(uri)
+                          .then((value) => debugPrint("Launched ${skill.name}"))
+                          .catchError((error) => debugPrint(
+                              "Error launching ${skill.name}: $error"));
+                    },
+                    icon: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        child: Image.asset(
+                          skill.icon,
+                          color: isDarkMode
+                              ? Colors.white
+                              : isDarkMode
+                                  ? Colors.black
+                                  : null,
+                        ),
                       ),
                     ),
+                    label: Text(skill.name),
                   ),
-                  label: Text(skill.name),
                 ),
               )
               .toList(),
