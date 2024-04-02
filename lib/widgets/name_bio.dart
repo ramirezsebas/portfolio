@@ -17,14 +17,15 @@ class NameBio extends StatelessWidget {
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment:
+          !isMobileSize ? CrossAxisAlignment.start : CrossAxisAlignment.center,
       children: [
         Text(
           name,
           style: Theme.of(context).textTheme.displayLarge,
-          textAlign: TextAlign.center,
         ),
         const SizedBox(
-          height: 30,
+          height: 10,
         ),
         Text(
           bio,
