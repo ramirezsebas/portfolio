@@ -14,7 +14,12 @@ class NavItem {
 
 const navItems = [
   NavItem(
-    icon: Icon(Icons.work_rounded),
+    icon: Icon(Icons.bookmark_rounded),
+    label: "Skills",
+    pathName: 'skills',
+  ),
+  NavItem(
+    icon: Icon(Icons.donut_small_rounded),
     label: "Projects",
     pathName: 'projects',
   ),
@@ -27,5 +32,10 @@ const navItems = [
     icon: Icon(Icons.school_rounded),
     label: "Education",
     pathName: 'education',
+  ),
+  NavItem(
+    icon: Icon(Icons.file_copy_rounded),
+    label: "Resumé",
+    pathName: 'resume',
   ),
 ];
