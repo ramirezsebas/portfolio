@@ -8,43 +8,19 @@ class Skill {
 
 final skills = [
   Skill(
-    name: "Flutter",
-    icon: "assets/icons/flutter.svg",
+    name: "Docker",
+    icon: "assets/icons/docker.png",
   ),
   Skill(
-    name: "Dart",
-    icon: "assets/icons/dart.svg",
-  ),
-  Skill(
-    name: "Angular",
-    icon: "assets/icons/angular.svg",
+    name: "JavaScript",
+    icon: "assets/icons/js.png",
   ),
   Skill(
     name: "Node.js",
-    icon: "assets/icons/nodejs.svg",
+    icon: "assets/icons/nodejs.png",
   ),
   Skill(
-    name: "Express.js",
-    icon: "assets/icons/express.svg",
-  ),
-  Skill(
-    name: "Fastify",
-    icon: "assets/icons/fastify.svg",
-  ),
-  Skill(
-    name: "Firebase",
-    icon: "assets/icons/firebase.svg",
-  ),
-  Skill(
-    name: "TypeORM",
-    icon: "assets/icons/typeorm.svg",
-  ),
-  Skill(
-    name: "Postgresql",
-    icon: "assets/icons/postgresql.svg",
-  ),
-  Skill(
-    name: "PM2",
-    icon: "assets/icons/pm2.svg",
+    name: "TypeScript",
+    icon: "assets/icons/typescript.png",
   ),
 ];
