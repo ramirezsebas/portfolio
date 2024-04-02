@@ -124,7 +124,7 @@ class MyApp extends ConsumerWidget {
                   return FadeTransition(opacity: animation, child: child);
                 },
                 key: const ValueKey('search'),
-                child: SearchPage(),
+                child: const SearchPage(),
               );
             },
           ),
