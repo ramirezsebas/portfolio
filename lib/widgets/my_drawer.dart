@@ -50,6 +50,10 @@ class MyDrawer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
+                icon: const Icon(Icons.search_outlined),
+                onPressed: () => GoRouter.of(context).goNamed("search"),
+              ),
+              IconButton(
                 icon: Icon(
                   themeIcon,
                 ),
