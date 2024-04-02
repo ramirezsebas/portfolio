@@ -9,6 +9,53 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/arroba.png
+  AssetGenImage get arroba => const AssetGenImage('assets/icons/arroba.png');
+
+  /// File path: assets/icons/docker.png
+  AssetGenImage get docker => const AssetGenImage('assets/icons/docker.png');
+
+  /// File path: assets/icons/facebook.png
+  AssetGenImage get facebook =>
+      const AssetGenImage('assets/icons/facebook.png');
+
+  /// File path: assets/icons/github.png
+  AssetGenImage get github => const AssetGenImage('assets/icons/github.png');
+
+  /// File path: assets/icons/js.png
+  AssetGenImage get js => const AssetGenImage('assets/icons/js.png');
+
+  /// File path: assets/icons/linkedin.png
+  AssetGenImage get linkedin =>
+      const AssetGenImage('assets/icons/linkedin.png');
+
+  /// File path: assets/icons/nodejs.png
+  AssetGenImage get nodejs => const AssetGenImage('assets/icons/nodejs.png');
+
+  /// File path: assets/icons/twitter.png
+  AssetGenImage get twitter => const AssetGenImage('assets/icons/twitter.png');
+
+  /// File path: assets/icons/typescript.png
+  AssetGenImage get typescript =>
+      const AssetGenImage('assets/icons/typescript.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        arroba,
+        docker,
+        facebook,
+        github,
+        js,
+        linkedin,
+        nodejs,
+        twitter,
+        typescript
+      ];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -22,6 +69,7 @@ class $AssetsImagesGen {
 class Assets {
   Assets._();
 
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
