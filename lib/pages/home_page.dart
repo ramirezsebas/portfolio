@@ -13,7 +13,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMobileSize = MediaQuery.of(context).isMobileSize;
     return BodyLayout(
       childrenForDesktop: [
         const Expanded(
