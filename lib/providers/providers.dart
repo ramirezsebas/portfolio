@@ -14,3 +14,15 @@ class ThemeModeNotifier extends _$ThemeModeNotifier {
     state = state == ThemeMode.light ? ThemeMode.dark : ThemeMode.light;
   }
 }
+
+@riverpod
+class GeneralSearchNotifier extends _$GeneralSearchNotifier {
+  @override
+  String build() {
+    return '';
+  }
+
+  void update(String value) {
+    state = value;
+  }
+}
