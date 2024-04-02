@@ -1,9 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/extensions/extensions.dart';
 import 'package:my_portfolio/helpers/helpers.dart';
-import 'package:my_portfolio/pages/pages.dart';
 import 'package:my_portfolio/providers/providers.dart';
 import 'package:my_portfolio/widgets/widgets.dart';
 
@@ -15,11 +15,43 @@ class PageLayout extends ConsumerWidget {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final scrollController = ScrollController();
+  var paddingHorizontal = 55.0;
   final Widget body;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isMobileSize = MediaQuery.of(context).isMobileSize;
+    final isTabletSize = MediaQuery.of(context).isTabletSize;
+    final isDesktopSize = MediaQuery.of(context).isDesktopSize;
+    List<Widget> title;
+
+    if (isMobileSize) {
+      paddingHorizontal = 15.0;
+      title = [const Text("Matias Ramirez")];
+    } else if (isTabletSize) {
+      paddingHorizontal = 35.0;
+      title = navItems
+          .map(
+            (e) => IconButton(
+              onPressed: () => GoRouter.of(context).goNamed(e.pathName),
+              icon: e.icon,
+            ),
+          )
+          .toList();
+    } else if (isDesktopSize) {
+      paddingHorizontal = 55.0;
+      title = navItems
+          .map(
+            (e) => TextButton.icon(
+              onPressed: () => GoRouter.of(context).goNamed(e.pathName),
+              icon: e.icon,
+              label: Text(e.label),
+            ),
+          )
+          .toList();
+    } else {
+      title = [const Text("Matias Ramirez")];
+    }
 
     return Scaffold(
       key: scaffoldKey,
@@ -27,8 +59,7 @@ class PageLayout extends ConsumerWidget {
         themeIcon: ref.watch(themeModeNotifierProvider) == ThemeMode.light
             ? Icons.light_mode_outlined
             : Icons.dark_mode_outlined,
-        onToggleTheme: () =>
-            ref.read(themeModeNotifierProvider.notifier).toggle(),
+        onToggleTheme: ref.read(themeModeNotifierProvider.notifier).toggle,
       ),
       body: Column(
         children: [
@@ -47,18 +78,7 @@ class PageLayout extends ConsumerWidget {
                 )
               ]
             ],
-            title: isMobileSize
-                ? [const Text("Matias Ramirez")]
-                : navItems
-                    .map(
-                      (e) => TextButton.icon(
-                        onPressed: () =>
-                            GoRouter.of(context).goNamed(e.pathName),
-                        icon: e.icon,
-                        label: Text(e.label),
-                      ),
-                    )
-                    .toList(),
+            title: title,
             trailing: [
               if (isMobileSize) ...[
                 IconButton(
@@ -68,7 +88,7 @@ class PageLayout extends ConsumerWidget {
               ] else ...[
                 IconButton(
                   icon: const Icon(Icons.search_outlined),
-                  onPressed: () {},
+                  onPressed: () => GoRouter.of(context).goNamed("search"),
                 ),
                 IconButton(
                   icon: Icon(
@@ -82,19 +102,22 @@ class PageLayout extends ConsumerWidget {
               ]
             ],
             height: 45,
-            padding: const EdgeInsets.symmetric(
-              horizontal: 20,
+            padding: EdgeInsets.symmetric(
+              horizontal: paddingHorizontal,
             ),
           ),
           const Divider(),
           Expanded(
             child: SingleChildScrollView(
               controller: scrollController,
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 30,
+              padding: EdgeInsets.symmetric(
+                horizontal: paddingHorizontal,
+                vertical: 10,
               ),
-              child: const Body(),
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height,
+                child: body,
+              ),
             ),
           ),
         ],
@@ -103,25 +126,39 @@ class PageLayout extends ConsumerWidget {
   }
 }
 
-class Body extends StatelessWidget {
-  const Body({super.key});
+// class Body extends StatelessWidget {
+//   const Body({
+//     super.key,
+//     required this.scrollController,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        NameBio(
-          name: "Matias Ramirez",
-          bio:
-              "I am Matías Sebastián Ramírez Brizuela, a software engineer with three years of experience in the technology sector. Completing the computer engineering degree at the Polytechnic Faculty, National University of Asunción. I specialize in mobile app development with Flutter and Dart, as well as web development with Angular and React. I enjoy solving complex problems with creativity and precision. Furthermore, I am proficient in Node.js with JavaScript and TypeScript, along with frameworks like Express and Fastify. I am committed to excellence and collaboration in my work.",
-        ),
-        Divider(),
-        ProjectsPage(),
-        Divider(),
-        ExperiencePage(),
-        Divider(),
-        EducationPage(),
-      ],
-    );
-  }
-}
+//   final ScrollController scrollController;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     final size = MediaQuery.of(context).size;
+//     return Column(
+//       children: [
+//         SizedBox(
+//           height: size.height,
+//           child: const HomePage(),
+//         ),
+//         const Divider(),
+//         SizedBox(
+//           height: size.height,
+//           child: const ProjectsPage(),
+//         ),
+//         const Divider(),
+//         SizedBox(
+//           height: size.height,
+//           child: const ExperiencePage(),
+//         ),
+//         const Divider(),
+//         SizedBox(
+//           height: size.height,
+//           child: const EducationPage(),
+//         ),
+//       ],
+//     );
+//   }
+// }
