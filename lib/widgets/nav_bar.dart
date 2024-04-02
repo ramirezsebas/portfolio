@@ -24,6 +24,7 @@ class NavBar extends StatelessWidget {
       width: size.width,
       height: height,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           ...leading,
           const Spacer(),
