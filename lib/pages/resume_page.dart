@@ -27,7 +27,6 @@ class ResumePage extends StatelessWidget {
               context: context,
               builder: (context) {
                 return AlertDialog(
-                  title: Text("${l10n.download} ${l10n.resume}"),
                   content: Text(l10n.goToResume),
                   actions: [
                     TextButton(
