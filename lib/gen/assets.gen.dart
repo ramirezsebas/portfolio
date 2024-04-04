@@ -34,6 +34,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/fastify.png
   AssetGenImage get fastify => const AssetGenImage('assets/icons/fastify.png');
 
+  /// File path: assets/icons/firebase.png
+  AssetGenImage get firebase =>
+      const AssetGenImage('assets/icons/firebase.png');
+
   /// File path: assets/icons/flutter.png
   AssetGenImage get flutter => const AssetGenImage('assets/icons/flutter.png');
 
@@ -109,6 +113,7 @@ class $AssetsIconsGen {
         express,
         facebook,
         fastify,
+        firebase,
         flutter,
         git,
         github,
