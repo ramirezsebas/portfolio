@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:my_portfolio/layouts/layouts.dart';
 import 'package:my_portfolio/models/skills.dart';
 
 class SkillsPage extends StatelessWidget {
@@ -26,39 +24,68 @@ class SkillsPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 50),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                "Programming Languages",
-                style: Theme.of(context).textTheme.displaySmall,
-              ),
-              const SizedBox(width: 20),
-              const Expanded(
-                child: Divider(
-                  thickness: 1,
-                ),
-              ),
-            ],
+          ...skillCategories.map(
+            (e) => SkillSection(
+              skillCategory: e,
+            ),
           ),
-          const SizedBox(height: 20),
-          SizedBox(
+        ],
+      ),
+    );
+  }
+}
+
+class SkillSection extends StatelessWidget {
+  const SkillSection({
+    super.key,
+    required this.skillCategory,
+  });
+
+  final SkillCategory skillCategory;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              skillCategory.name,
+              style: Theme.of(context).textTheme.displaySmall,
+            ),
+            const SizedBox(width: 20),
+            const Expanded(
+              child: Divider(
+                thickness: 1,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 20),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: SizedBox(
             width: MediaQuery.of(context).size.width,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: skills
+              children: skillCategory.skills
                   .map(
                     (e) => SizedBox(
                       width: 200,
                       child: Card(
-                        child: Row(
-                          children: [
-                            Text(e.name),
-                            Image.asset(
-                              e.icon,
-                              height: 50,
-                            ),
-                          ],
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Row(
+                            children: [
+                              Text(e.name),
+                              const Spacer(),
+                              Image.asset(
+                                e.icon,
+                                height: 50,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -66,8 +93,8 @@ class SkillsPage extends StatelessWidget {
                   .toList(),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
