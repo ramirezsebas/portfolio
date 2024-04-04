@@ -31,6 +31,7 @@ class SkillsPage extends ConsumerWidget {
           const SizedBox(height: 50),
           ...ref.watch(skillsSearchProvider).map(
                 (e) => SkillSection(
+                  currentLocale: ref.watch(localeToggleProvider),
                   skillCategory: e,
                 ),
               ),

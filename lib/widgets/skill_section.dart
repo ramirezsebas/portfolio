@@ -4,10 +4,12 @@ import 'package:my_portfolio/models/skills.dart';
 class SkillSection extends StatelessWidget {
   const SkillSection({
     super.key,
+    required this.currentLocale,
     required this.skillCategory,
   });
 
   final SkillCategory skillCategory;
+  final Locale currentLocale;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,9 @@ class SkillSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              skillCategory.name,
+              currentLocale == const Locale('en')
+                  ? skillCategory.name
+                  : skillCategory.nameSpanish,
               style: Theme.of(context).textTheme.displaySmall,
             ),
             const SizedBox(width: 20),

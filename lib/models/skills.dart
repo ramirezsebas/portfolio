@@ -1,18 +1,22 @@
 class SkillCategory {
   final String name;
+  final String nameSpanish;
   final List<Skill> skills;
 
   SkillCategory({
     required this.name,
+    required this.nameSpanish,
     required this.skills,
   });
 
   SkillCategory copyWith({
     String? name,
+    String? nameSpanish,
     List<Skill>? skills,
   }) {
     return SkillCategory(
       name: name ?? this.name,
+      nameSpanish: nameSpanish ?? this.nameSpanish,
       skills: skills ?? this.skills,
     );
   }
@@ -31,22 +35,27 @@ class Skill {
 final skillCategories = [
   SkillCategory(
     name: "Programming Languages",
+    nameSpanish: "Lenguajes de Programación",
     skills: programmingLanguages,
   ),
   SkillCategory(
     name: "Frameworks/Libraries",
+    nameSpanish: "Frameworks/Bibliotecas",
     skills: frameworks,
   ),
   SkillCategory(
     name: "Tools",
+    nameSpanish: "Herramientas",
     skills: tools,
   ),
   SkillCategory(
     name: "Databases",
+    nameSpanish: "Bases de Datos",
     skills: databases,
   ),
   SkillCategory(
     name: "Operating Systems",
+    nameSpanish: "Sistemas Operativos",
     skills: operatingSystems,
   ),
 ];
