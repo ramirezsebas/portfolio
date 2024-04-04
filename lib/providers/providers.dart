@@ -8,7 +8,7 @@ part 'providers.g.dart';
 class ThemeModeNotifier extends _$ThemeModeNotifier {
   @override
   ThemeMode build() {
-    return ThemeMode.light;
+    return ThemeMode.dark;
   }
 
   bool isDarkMode() {
