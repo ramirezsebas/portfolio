@@ -81,16 +81,20 @@ final frameworks = [
 
 final tools = [
   Skill(
+    name: "Node.js",
+    icon: "assets/icons/nodejs.png",
+  ),
+  Skill(
+    name: "Docker",
+    icon: "assets/icons/docker.png",
+  ),
+  Skill(
     name: "Git",
     icon: "assets/icons/git.png",
   ),
   Skill(
     name: "GitHub",
     icon: "assets/icons/github.png",
-  ),
-  Skill(
-    name: "GitLab",
-    icon: "assets/icons/gitlab.png",
   ),
   Skill(
     name: "Postman",
