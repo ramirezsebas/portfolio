@@ -95,6 +95,14 @@ final tools = [
     icon: "assets/icons/nodejs.png",
   ),
   Skill(
+    name: "npm",
+    icon: "assets/icons/npm.png",
+  ),
+  Skill(
+    name: "Yarn",
+    icon: "assets/icons/yarn.png",
+  ),
+  Skill(
     name: "Docker",
     icon: "assets/icons/docker.png",
   ),
