@@ -50,5 +50,9 @@
     "selectLanguage": "Seleccionar idioma",
     "@selectLanguage": {
       "description": "Seleccionar idioma texto"
-    }
+    },
+    "close": "Cerrar",
+    "@close": {
+      "description": "Cerrar texto"
+    } 
 }

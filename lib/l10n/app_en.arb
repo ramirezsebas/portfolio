@@ -50,5 +50,9 @@
   "selectLanguage": "Select language",
   "@selectLanguage": {
     "description": "Select language text"
+  },
+  "close": "Close",
+  "@close": {
+    "description": "Close text"
   } 
 }
