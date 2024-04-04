@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/models/models.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'providers.g.dart';
@@ -28,5 +29,26 @@ class GeneralSearchNotifier extends _$GeneralSearchNotifier {
 
   void update(String value) {
     state = value;
+  }
+}
+
+@riverpod
+class SkillsSearch extends _$SkillsSearch {
+  @override
+  List<SkillCategory> build() {
+    return skillCategories;
+  }
+
+  void filter(String value) {
+    state = skillCategories
+        .map((e) => e.copyWith(
+              skills: e.skills
+                  .where((element) =>
+                      element.name.toLowerCase().contains(value.toLowerCase()))
+                  .toList(),
+            ))
+        .toList()
+        .where((element) => element.skills.isNotEmpty)
+        .toList();
   }
 }

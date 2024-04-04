@@ -39,5 +39,20 @@ final generalSearchNotifierProvider =
 );
 
 typedef _$GeneralSearchNotifier = AutoDisposeNotifier<String>;
+String _$skillsSearchHash() => r'fc507d27ec504db1159f64c4c65345f872ff9a82';
+
+/// See also [SkillsSearch].
+@ProviderFor(SkillsSearch)
+final skillsSearchProvider =
+    AutoDisposeNotifierProvider<SkillsSearch, List<SkillCategory>>.internal(
+  SkillsSearch.new,
+  name: r'skillsSearchProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$skillsSearchHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$SkillsSearch = AutoDisposeNotifier<List<SkillCategory>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
