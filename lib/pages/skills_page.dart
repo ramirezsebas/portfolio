@@ -63,35 +63,32 @@ class SkillSection extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 20),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: skillCategory.skills
-                  .map(
-                    (e) => SizedBox(
-                      width: 200,
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Row(
-                            children: [
-                              Text(e.name),
-                              const Spacer(),
-                              Image.asset(
-                                e.icon,
-                                height: 50,
-                              ),
-                            ],
-                          ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width,
+          child: Wrap(
+            spacing: 20,
+            children: skillCategory.skills
+                .map(
+                  (e) => SizedBox(
+                    width: 200,
+                    child: Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Row(
+                          children: [
+                            Text(e.name),
+                            const Spacer(),
+                            Image.asset(
+                              e.icon,
+                              height: 40,
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                  )
-                  .toList(),
-            ),
+                  ),
+                )
+                .toList(),
           ),
         ),
       ],
