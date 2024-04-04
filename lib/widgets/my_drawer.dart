@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/gen/assets.gen.dart';
 import 'package:my_portfolio/helpers/helpers.dart';
+import 'package:my_portfolio/widgets/widgets.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({
     super.key,
     required this.onToggleTheme,
+    required this.onSelectedLanguage,
     required this.themeIcon,
   });
 
   final VoidCallback onToggleTheme;
+  final void Function(Locale) onSelectedLanguage;
   final IconData themeIcon;
 
   @override
@@ -55,26 +58,7 @@ class MyDrawer extends StatelessWidget {
                   showDialog(
                     context: context,
                     builder: (context) {
-                      return AlertDialog(
-                        title: const Text("Select Language"),
-                        content: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            ListTile(
-                              title: const Text("English"),
-                              onTap: () {
-                                Navigator.of(context).pop();
-                              },
-                            ),
-                            ListTile(
-                              title: const Text("Spanish"),
-                              onTap: () {
-                                Navigator.of(context).pop();
-                              },
-                            ),
-                          ],
-                        ),
-                      );
+                      return LangauageDialog(onSelectedLanguage: (locale) {});
                     },
                   );
                 },

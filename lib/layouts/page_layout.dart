@@ -65,6 +65,9 @@ class PageLayout extends ConsumerWidget {
             ? Icons.light_mode_outlined
             : Icons.dark_mode_outlined,
         onToggleTheme: ref.read(themeModeNotifierProvider.notifier).toggle,
+        onSelectedLanguage: (locale) {
+          ref.read(localeToggleProvider.notifier).toggle(locale);
+        },
       ),
       body: Column(
         children: [
@@ -96,45 +99,13 @@ class PageLayout extends ConsumerWidget {
                   onPressed: () {
                     showDialog(
                       context: context,
-                      builder: (context) {
-                        final l10n = context.l10n;
-                        return AlertDialog(
-                          title: Text(
-                            l10n.selectLanguage,
-                          ),
-                          content: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              ListTile(
-                                title: Text(
-                                  l10n.english,
-                                ),
-                                onTap: () {
-                                  ref
-                                      .read(localeToggleProvider.notifier)
-                                      .toggle(
-                                        const Locale("en"),
-                                      );
-                                  Navigator.of(context).pop();
-                                },
-                              ),
-                              ListTile(
-                                title: Text(
-                                  l10n.spanish,
-                                ),
-                                onTap: () {
-                                  ref
-                                      .read(localeToggleProvider.notifier)
-                                      .toggle(
-                                        const Locale("es"),
-                                      );
-                                  Navigator.of(context).pop();
-                                },
-                              ),
-                            ],
-                          ),
-                        );
-                      },
+                      builder: (context) => LangauageDialog(
+                        onSelectedLanguage: (locale) {
+                          ref
+                              .read(localeToggleProvider.notifier)
+                              .toggle(locale);
+                        },
+                      ),
                     );
                   },
                 ),
