@@ -14,15 +14,15 @@ class NavItem {
 
 const navItems = [
   NavItem(
-    icon: Icon(Icons.bookmark_rounded),
+    icon: Icon(Icons.donut_small_rounded),
     label: "Skills",
     pathName: 'skills',
   ),
-  NavItem(
-    icon: Icon(Icons.donut_small_rounded),
-    label: "Projects",
-    pathName: 'projects',
-  ),
+  // NavItem(
+  //   icon: Icon(Icons.donut_small_rounded),
+  //   label: "Projects",
+  //   pathName: 'projects',
+  // ),
   NavItem(
     icon: Icon(Icons.work_rounded),
     label: "Experience",
