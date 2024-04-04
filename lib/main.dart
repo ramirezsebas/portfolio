@@ -3,12 +3,10 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/layouts/layouts.dart';
-import 'package:my_portfolio/pages/education_page.dart';
 import 'package:my_portfolio/pages/experience_page.dart';
 import 'package:my_portfolio/pages/home_page.dart';
 import 'package:my_portfolio/pages/projects_page.dart';
 import 'package:my_portfolio/pages/resume_page.dart';
-import 'package:my_portfolio/pages/search_page.dart';
 import 'package:my_portfolio/pages/skills_page.dart';
 import 'package:my_portfolio/providers/providers.dart';
 import 'package:my_portfolio/themes/themes.dart';
@@ -72,20 +70,20 @@ class MyApp extends ConsumerWidget {
               );
             },
           ),
-          GoRoute(
-            path: '/education',
-            name: 'education',
-            pageBuilder: (context, state) {
-              return CustomTransitionPage(
-                transitionsBuilder:
-                    (context, animation, secondaryAnimation, child) {
-                  return FadeTransition(opacity: animation, child: child);
-                },
-                key: const ValueKey('education'),
-                child: const EducationPage(),
-              );
-            },
-          ),
+          // GoRoute(
+          //   path: '/education',
+          //   name: 'education',
+          //   pageBuilder: (context, state) {
+          //     return CustomTransitionPage(
+          //       transitionsBuilder:
+          //           (context, animation, secondaryAnimation, child) {
+          //         return FadeTransition(opacity: animation, child: child);
+          //       },
+          //       key: const ValueKey('education'),
+          //       child: const EducationPage(),
+          //     );
+          //   },
+          // ),
           GoRoute(
             path: '/projects',
             name: 'projects',
@@ -114,20 +112,20 @@ class MyApp extends ConsumerWidget {
               );
             },
           ),
-          GoRoute(
-            path: '/search',
-            name: 'search',
-            pageBuilder: (context, state) {
-              return CustomTransitionPage(
-                transitionsBuilder:
-                    (context, animation, secondaryAnimation, child) {
-                  return FadeTransition(opacity: animation, child: child);
-                },
-                key: const ValueKey('search'),
-                child: const SearchPage(),
-              );
-            },
-          ),
+          // GoRoute(
+          //   path: '/search',
+          //   name: 'search',
+          //   pageBuilder: (context, state) {
+          //     return CustomTransitionPage(
+          //       transitionsBuilder:
+          //           (context, animation, secondaryAnimation, child) {
+          //         return FadeTransition(opacity: animation, child: child);
+          //       },
+          //       key: const ValueKey('search'),
+          //       child: const SearchPage(),
+          //     );
+          //   },
+          // ),
         ],
       ),
     ],

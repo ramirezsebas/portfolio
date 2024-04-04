@@ -28,11 +28,11 @@ const navItems = [
     label: "Experience",
     pathName: 'experience',
   ),
-  NavItem(
-    icon: Icon(Icons.school_rounded),
-    label: "Education",
-    pathName: 'education',
-  ),
+  // NavItem(
+  //   icon: Icon(Icons.school_rounded),
+  //   label: "Education",
+  //   pathName: 'education',
+  // ),
   NavItem(
     icon: Icon(Icons.file_copy_rounded),
     label: "Resumé",
