@@ -27,13 +27,9 @@ class HomePage extends StatelessWidget {
           width: 200,
           height: 200,
           child: Swiper(
-            itemCount: skillCategories.length,
+            itemCount: topSkills.length,
             itemBuilder: (context, index) {
-              final randomIndexCategory = index % skillCategories.length;
-              final randomIndexSkill =
-                  index % skillCategories[randomIndexCategory].skills.length;
-              final skill =
-                  skillCategories[randomIndexCategory].skills[randomIndexSkill];
+              final skill = topSkills[index];
               return Image.asset(skill.icon);
             },
             autoplay: true,
@@ -45,13 +41,9 @@ class HomePage extends StatelessWidget {
           width: 200,
           height: 200,
           child: Swiper(
-            itemCount: skillCategories.length,
+            itemCount: topSkills.length,
             itemBuilder: (context, index) {
-              final randomIndexCategory = index % skillCategories.length;
-              final randomIndexSkill =
-                  index % skillCategories[randomIndexCategory].skills.length;
-              final skill =
-                  skillCategories[randomIndexCategory].skills[randomIndexSkill];
+              final skill = topSkills[index];
               return Image.asset(skill.icon);
             },
             autoplay: true,

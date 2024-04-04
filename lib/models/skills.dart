@@ -153,3 +153,46 @@ final operatingSystems = [
     icon: "assets/icons/macos.png",
   ),
 ];
+
+final topSkills = [
+  Skill(
+    name: "Flutter",
+    icon: "assets/icons/flutter.png",
+  ),
+  Skill(
+    name: "Dart",
+    icon: "assets/icons/dart.png",
+  ),
+  Skill(
+    name: "Angular",
+    icon: "assets/icons/angular.png",
+  ),
+  Skill(
+    name: "React",
+    icon: "assets/icons/react.png",
+  ),
+  Skill(
+    name: "Node.js",
+    icon: "assets/icons/nodejs.png",
+  ),
+  Skill(
+    name: "Express",
+    icon: "assets/icons/express.png",
+  ),
+  Skill(
+    name: "Fastify",
+    icon: "assets/icons/fastify.png",
+  ),
+  Skill(
+    name: "MongoDB",
+    icon: "assets/icons/mongodb.png",
+  ),
+  Skill(
+    name: "MySQL",
+    icon: "assets/icons/mysql.png",
+  ),
+  Skill(
+    name: "PostgreSQL",
+    icon: "assets/icons/postgresql.png",
+  ),
+];
