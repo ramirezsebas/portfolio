@@ -26,7 +26,7 @@ class ResumePage extends StatelessWidget {
             showDialog(
               context: context,
               builder: (context) {
-                return AlertDialog.adaptive(
+                return AlertDialog(
                   title: Text("${l10n.download} ${l10n.resume}"),
                   content: Text(l10n.goToResume),
                   actions: [
@@ -51,6 +51,12 @@ class ResumePage extends StatelessWidget {
                                 "Error launching Spanish Resume: $error"));
                       },
                       child: Text(l10n.spanish),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text(l10n.close),
                     ),
                   ],
                 );
