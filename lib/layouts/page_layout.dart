@@ -88,8 +88,41 @@ class PageLayout extends ConsumerWidget {
                 ),
               ] else ...[
                 IconButton(
-                  icon: const Icon(Icons.search_outlined),
-                  onPressed: () => GoRouter.of(context).goNamed("search"),
+                  icon: const Icon(Icons.language_rounded),
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        final l10n = context.l10n;
+                        return AlertDialog(
+                          title: Text(
+                            l10n.selectLanguage,
+                          ),
+                          content: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              ListTile(
+                                title: Text(
+                                  l10n.english,
+                                ),
+                                onTap: () {
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                              ListTile(
+                                title: Text(
+                                  l10n.spanish,
+                                ),
+                                onTap: () {
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    );
+                  },
                 ),
                 IconButton(
                   icon: Icon(

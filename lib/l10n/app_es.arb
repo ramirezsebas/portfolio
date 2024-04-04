@@ -14,5 +14,41 @@
     "education": "Educación",
     "@education": {
         "description": "Educación nav texto"
+    },
+    "bio": "Soy Matías Sebastián Ramírez Brizuela, un ingeniero de software con tres años de experiencia en el sector tecnológico. He completado la carrera de ingeniería informática en la Facultad Politécnica de la Universidad Nacional de Asunción. Me especializo en el desarrollo de aplicaciones móviles con Flutter y Dart, así como en el desarrollo web con Angular y React. Disfruto resolviendo problemas complejos con creatividad y precisión. Además, tengo habilidades en Node.js con JavaScript y TypeScript, junto con frameworks como Express y Fastify. Estoy comprometido con la excelencia y la colaboración en mi trabajo.",
+    "@bio": {
+      "description": "Bio texto"
+    },
+    "search": "Buscar",
+    "@search": {
+      "description": "Buscar texto"
+    },
+    "resume": "Currículum",
+    "@resume": {
+      "description": "Currículum texto"
+    },
+    "download": "Descargar",
+    "@download": {
+      "description": "Descargar texto"
+    },
+    "spanish": "Español",
+    "@spanish": {
+      "description": "Texto en español"
+    },
+    "english": "Inglés",
+    "@english": {
+      "description": "Texto en inglés"
+    },
+    "goToResume": "¿Quieres ver mi currículum en Inglés o Español?",
+    "@goToResume": {
+      "description": "Ver currículum texto"
+    },
+    "skills": "Habilidades",
+    "@skills": {
+      "description": "Habilidades texto"
+    },
+    "selectLanguage": "Seleccionar idioma",
+    "@selectLanguage": {
+      "description": "Seleccionar idioma texto"
     }
 }

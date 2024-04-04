@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/extensions/extensions.dart';
 import 'package:my_portfolio/models/models.dart';
 
 class ProjectsPage extends StatelessWidget {
@@ -6,16 +7,17 @@ class ProjectsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Column(
       children: [
         Text(
-          "Projects",
+          l10n.projects,
           style: Theme.of(context).textTheme.displayLarge,
         ),
         const SizedBox(height: 20),
         TextFormField(
           decoration: InputDecoration(
-            hintText: "Search...",
+            hintText: "${l10n.search}...",
             prefixIcon: const Icon(Icons.search),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(25),

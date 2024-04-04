@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/extensions/extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 const urlResumeEnglish =
@@ -12,10 +13,11 @@ class ResumePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Column(
       children: [
         Text(
-          "Resume",
+          l10n.resume,
           style: Theme.of(context).textTheme.displayLarge,
         ),
         const SizedBox(height: 20),
@@ -25,9 +27,8 @@ class ResumePage extends StatelessWidget {
               context: context,
               builder: (context) {
                 return AlertDialog.adaptive(
-                  title: const Text("Download Resume"),
-                  content: const Text(
-                      "Do you want to download the resume in English or Spanish?"),
+                  title: Text("${l10n.download} ${l10n.resume}"),
+                  content: Text(l10n.goToResume),
                   actions: [
                     TextButton(
                       onPressed: () {
@@ -38,7 +39,7 @@ class ResumePage extends StatelessWidget {
                             .catchError((error) => debugPrint(
                                 "Error launching English Resume: $error"));
                       },
-                      child: const Text("English"),
+                      child: Text(l10n.english),
                     ),
                     TextButton(
                       onPressed: () {
@@ -49,14 +50,14 @@ class ResumePage extends StatelessWidget {
                             .catchError((error) => debugPrint(
                                 "Error launching Spanish Resume: $error"));
                       },
-                      child: const Text("Spanish"),
+                      child: Text(l10n.spanish),
                     ),
                   ],
                 );
               },
             );
           },
-          child: const Text("Go to Resume"),
+          child: Text(l10n.goToResume),
         ),
       ],
     );

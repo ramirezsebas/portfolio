@@ -50,8 +50,34 @@ class MyDrawer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                icon: const Icon(Icons.search_outlined),
-                onPressed: () => GoRouter.of(context).goNamed("search"),
+                icon: const Icon(Icons.language_rounded),
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: const Text("Select Language"),
+                        content: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            ListTile(
+                              title: const Text("English"),
+                              onTap: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                            ListTile(
+                              title: const Text("Spanish"),
+                              onTap: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                },
               ),
               IconButton(
                 icon: Icon(
