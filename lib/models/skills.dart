@@ -6,6 +6,16 @@ class SkillCategory {
     required this.name,
     required this.skills,
   });
+
+  SkillCategory copyWith({
+    String? name,
+    List<Skill>? skills,
+  }) {
+    return SkillCategory(
+      name: name ?? this.name,
+      skills: skills ?? this.skills,
+    );
+  }
 }
 
 class Skill {
