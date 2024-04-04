@@ -52,3 +52,22 @@ class SkillsSearch extends _$SkillsSearch {
         .toList();
   }
 }
+
+@riverpod
+class ExperiencesSearch extends _$ExperiencesSearch {
+  @override
+  List<Experience> build() {
+    return experiences;
+  }
+
+  void filter(String value) {
+    state = experiences
+        .where((element) =>
+            element.company.toLowerCase().contains(value.toLowerCase()) ||
+            element.title.toLowerCase().contains(value.toLowerCase()) ||
+            element.location.toLowerCase().contains(value.toLowerCase()) ||
+            element.description.toLowerCase().contains(value.toLowerCase()) ||
+            element.date.toLowerCase().contains(value.toLowerCase()))
+        .toList();
+  }
+}
