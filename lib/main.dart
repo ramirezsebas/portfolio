@@ -148,6 +148,7 @@ class MyApp extends ConsumerWidget {
         Locale('en'),
         Locale('es'),
       ],
+      locale: ref.watch(localeToggleProvider),
       theme: lightTheme,
       darkTheme: darkTheme,
       debugShowCheckedModeBanner: false,

@@ -70,5 +70,20 @@ final experiencesSearchProvider =
 );
 
 typedef _$ExperiencesSearch = AutoDisposeNotifier<List<Experience>>;
+String _$localeToggleHash() => r'b7d0924b7122932a074263465d60cc84fef3c93c';
+
+/// See also [LocaleToggle].
+@ProviderFor(LocaleToggle)
+final localeToggleProvider =
+    AutoDisposeNotifierProvider<LocaleToggle, Locale>.internal(
+  LocaleToggle.new,
+  name: r'localeToggleProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$localeToggleHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$LocaleToggle = AutoDisposeNotifier<Locale>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

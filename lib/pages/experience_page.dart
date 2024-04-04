@@ -50,16 +50,19 @@ class ExperiencePage extends ConsumerWidget {
                     Text(
                       "${e.title} - ${e.location}",
                       style: Theme.of(context).textTheme.bodyLarge,
+                      locale: ref.watch(localeToggleProvider),
                     ),
                     const SizedBox(height: 20),
                     Text(
                       e.description,
                       style: Theme.of(context).textTheme.bodyMedium,
+                      locale: ref.watch(localeToggleProvider),
                     ),
                     const SizedBox(height: 20),
                     Text(
                       e.date,
                       style: Theme.of(context).textTheme.bodySmall,
+                      locale: ref.watch(localeToggleProvider),
                     ),
                     const SizedBox(height: 20),
                     SizedBox(

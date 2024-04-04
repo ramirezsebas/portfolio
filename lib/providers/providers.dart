@@ -71,3 +71,15 @@ class ExperiencesSearch extends _$ExperiencesSearch {
         .toList();
   }
 }
+
+@riverpod
+class LocaleToggle extends _$LocaleToggle {
+  @override
+  Locale build() {
+    return const Locale('en');
+  }
+
+  void toggle(Locale locale) {
+    state = locale;
+  }
+}

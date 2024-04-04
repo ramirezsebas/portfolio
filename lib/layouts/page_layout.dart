@@ -46,7 +46,11 @@ class PageLayout extends ConsumerWidget {
             (e) => TextButton.icon(
               onPressed: () => GoRouter.of(context).goNamed(e.pathName),
               icon: e.icon,
-              label: Text(e.label),
+              label: Text(
+                ref.watch(localeToggleProvider) == const Locale("en")
+                    ? e.label
+                    : e.labelSpanish,
+              ),
             ),
           )
           .toList();
@@ -106,6 +110,11 @@ class PageLayout extends ConsumerWidget {
                                   l10n.english,
                                 ),
                                 onTap: () {
+                                  ref
+                                      .read(localeToggleProvider.notifier)
+                                      .toggle(
+                                        const Locale("en"),
+                                      );
                                   Navigator.of(context).pop();
                                 },
                               ),
@@ -114,6 +123,11 @@ class PageLayout extends ConsumerWidget {
                                   l10n.spanish,
                                 ),
                                 onTap: () {
+                                  ref
+                                      .read(localeToggleProvider.notifier)
+                                      .toggle(
+                                        const Locale("es"),
+                                      );
                                   Navigator.of(context).pop();
                                 },
                               ),

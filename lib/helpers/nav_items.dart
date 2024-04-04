@@ -4,11 +4,13 @@ class NavItem {
   const NavItem({
     required this.icon,
     required this.label,
+    required this.labelSpanish,
     required this.pathName,
   });
 
   final Icon icon;
   final String label;
+  final String labelSpanish;
   final String pathName;
 }
 
@@ -16,6 +18,7 @@ const navItems = [
   NavItem(
     icon: Icon(Icons.donut_small_rounded),
     label: "Skills",
+    labelSpanish: "Habilidades",
     pathName: 'skills',
   ),
   // NavItem(
@@ -26,6 +29,7 @@ const navItems = [
   NavItem(
     icon: Icon(Icons.work_rounded),
     label: "Experience",
+    labelSpanish: "Experiencia",
     pathName: 'experience',
   ),
   // NavItem(
@@ -36,6 +40,7 @@ const navItems = [
   NavItem(
     icon: Icon(Icons.file_copy_rounded),
     label: "Resumé",
+    labelSpanish: "Currículum",
     pathName: 'resume',
   ),
 ];
