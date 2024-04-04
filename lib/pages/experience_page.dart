@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/models/models.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:my_portfolio/providers/providers.dart';
 
-class ExperiencePage extends StatelessWidget {
+class ExperiencePage extends ConsumerWidget {
   const ExperiencePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -15,6 +16,7 @@ class ExperiencePage extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           TextFormField(
+            onChanged: ref.watch(experiencesSearchProvider.notifier).filter,
             decoration: InputDecoration(
               hintText: "Search...",
               prefixIcon: const Icon(Icons.search),
@@ -24,74 +26,74 @@ class ExperiencePage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          ...experiences.map(
-            (e) => Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+          ...ref.watch(experiencesSearchProvider).map(
+                (e) => Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      e.company,
-                      style: Theme.of(context).textTheme.displaySmall,
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          e.company,
+                          style: Theme.of(context).textTheme.displaySmall,
+                        ),
+                        const SizedBox(width: 20),
+                        const Expanded(
+                          child: Divider(
+                            thickness: 1,
+                          ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(width: 20),
-                    const Expanded(
-                      child: Divider(
-                        thickness: 1,
+                    Text(
+                      "${e.title} - ${e.location}",
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      e.description,
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      e.date,
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                    const SizedBox(height: 20),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: Wrap(
+                        spacing: 20,
+                        children: e.techStack
+                            .map(
+                              (e) => SizedBox(
+                                width: 200,
+                                child: Card(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: Row(
+                                      children: [
+                                        Text(e.name),
+                                        const Spacer(),
+                                        Image.asset(
+                                          e.icon,
+                                          height: 40,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                            .toList(),
                       ),
+                    ),
+                    const SizedBox(
+                      height: 10,
                     ),
                   ],
                 ),
-                Text(
-                  "${e.title} - ${e.location}",
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
-                const SizedBox(height: 20),
-                Text(
-                  e.description,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-                const SizedBox(height: 20),
-                Text(
-                  e.date,
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
-                const SizedBox(height: 20),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  child: Wrap(
-                    spacing: 20,
-                    children: e.techStack
-                        .map(
-                          (e) => SizedBox(
-                            width: 200,
-                            child: Card(
-                              child: Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: Row(
-                                  children: [
-                                    Text(e.name),
-                                    const Spacer(),
-                                    Image.asset(
-                                      e.icon,
-                                      height: 40,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        )
-                        .toList(),
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-              ],
-            ),
-          ),
+              ),
           // GridView.builder(
           //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           //     crossAxisCount: 3,
