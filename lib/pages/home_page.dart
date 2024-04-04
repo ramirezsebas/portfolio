@@ -2,8 +2,6 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:my_portfolio/extensions/extensions.dart';
-import 'package:my_portfolio/gen/assets.gen.dart';
 import 'package:my_portfolio/layouts/layouts.dart';
 import 'package:my_portfolio/models/skills.dart';
 import 'package:my_portfolio/widgets/widgets.dart';
@@ -29,9 +27,13 @@ class HomePage extends StatelessWidget {
           width: 200,
           height: 200,
           child: Swiper(
-            itemCount: skills.length,
+            itemCount: skillCategories.length,
             itemBuilder: (context, index) {
-              final skill = skills[index];
+              final randomIndexCategory = index % skillCategories.length;
+              final randomIndexSkill =
+                  index % skillCategories[randomIndexCategory].skills.length;
+              final skill =
+                  skillCategories[randomIndexCategory].skills[randomIndexSkill];
               return Image.asset(skill.icon);
             },
             autoplay: true,
@@ -43,9 +45,13 @@ class HomePage extends StatelessWidget {
           width: 200,
           height: 200,
           child: Swiper(
-            itemCount: skills.length,
+            itemCount: skillCategories.length,
             itemBuilder: (context, index) {
-              final skill = skills[index];
+              final randomIndexCategory = index % skillCategories.length;
+              final randomIndexSkill =
+                  index % skillCategories[randomIndexCategory].skills.length;
+              final skill =
+                  skillCategories[randomIndexCategory].skills[randomIndexSkill];
               return Image.asset(skill.icon);
             },
             autoplay: true,
