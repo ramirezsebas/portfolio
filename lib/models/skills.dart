@@ -34,7 +34,7 @@ final skillCategories = [
     skills: programmingLanguages,
   ),
   SkillCategory(
-    name: "Frameworks",
+    name: "Frameworks/Libraries",
     skills: frameworks,
   ),
   SkillCategory(
