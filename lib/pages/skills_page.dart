@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_portfolio/extensions/extensions.dart';
 import 'package:my_portfolio/providers/providers.dart';
-import 'package:my_portfolio/widgets/skill_section.dart';
+import 'package:my_portfolio/widgets/widgets.dart';
 
 class SkillsPage extends ConsumerWidget {
   const SkillsPage({super.key});
