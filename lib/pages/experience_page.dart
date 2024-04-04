@@ -29,74 +29,81 @@ class ExperiencePage extends ConsumerWidget {
           ),
           const SizedBox(height: 20),
           ...ref.watch(experiencesSearchProvider).map(
-                (e) => Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          e.company,
-                          style: Theme.of(context).textTheme.displaySmall,
-                        ),
-                        const SizedBox(width: 20),
-                        const Expanded(
-                          child: Divider(
-                            thickness: 1,
+                (e) => Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 20,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            e.company,
+                            style: Theme.of(context).textTheme.displaySmall,
                           ),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      "${e.title} - ${e.location}",
-                      style: Theme.of(context).textTheme.bodyLarge,
-                      locale: ref.watch(localeToggleProvider),
-                    ),
-                    const SizedBox(height: 20),
-                    Text(
-                      e.description,
-                      style: Theme.of(context).textTheme.bodyMedium,
-                      locale: ref.watch(localeToggleProvider),
-                    ),
-                    const SizedBox(height: 20),
-                    Text(
-                      e.date,
-                      style: Theme.of(context).textTheme.bodySmall,
-                      locale: ref.watch(localeToggleProvider),
-                    ),
-                    const SizedBox(height: 20),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      child: Wrap(
-                        spacing: 20,
-                        children: e.techStack
-                            .map(
-                              (e) => SizedBox(
-                                width: 200,
-                                child: Card(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Row(
-                                      children: [
-                                        Text(e.name),
-                                        const Spacer(),
-                                        Image.asset(
-                                          e.icon,
-                                          height: 40,
-                                        ),
-                                      ],
+                          const SizedBox(width: 20),
+                          const Expanded(
+                            child: Divider(
+                              thickness: 1,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Text(
+                        "${ref.watch(localeToggleProvider) == const Locale('en') ? e.title : e.titleEs} - ${e.location}",
+                        style: Theme.of(context).textTheme.bodyLarge,
+                        locale: ref.watch(localeToggleProvider),
+                      ),
+                      const SizedBox(height: 20),
+                      Text(
+                        ref.watch(localeToggleProvider) == const Locale("en")
+                            ? e.description
+                            : e.descriptionSpanish,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                        locale: ref.watch(localeToggleProvider),
+                      ),
+                      const SizedBox(height: 20),
+                      Text(
+                        e.date,
+                        style: Theme.of(context).textTheme.bodySmall,
+                        locale: ref.watch(localeToggleProvider),
+                      ),
+                      const SizedBox(height: 20),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: Wrap(
+                          spacing: 20,
+                          children: e.techStack
+                              .map(
+                                (e) => SizedBox(
+                                  width: 200,
+                                  child: Card(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(12.0),
+                                      child: Row(
+                                        children: [
+                                          Text(e.name),
+                                          const Spacer(),
+                                          Image.asset(
+                                            e.icon,
+                                            height: 40,
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            )
-                            .toList(),
+                              )
+                              .toList(),
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                  ],
+                      const SizedBox(
+                        height: 10,
+                      ),
+                    ],
+                  ),
                 ),
               ),
         ],
