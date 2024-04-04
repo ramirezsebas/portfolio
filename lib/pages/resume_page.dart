@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-const URL_RESUME_ENGLISH =
+const urlResumeEnglish =
     "https://ramireamatias1.notion.site/Matias-Ramirez-1a22d0e69c5147578ea0a176d2580734?pvs=4";
 
-const URL_RESUME_SPANISH =
+const urlResumeSpanish =
     "https://ramireamatias1.notion.site/Matias-Ramirez-157b7a62601a49b198107b9112082733?pvs=4";
 
 class ResumePage extends StatelessWidget {
@@ -21,18 +21,17 @@ class ResumePage extends StatelessWidget {
         const SizedBox(height: 20),
         ElevatedButton(
           onPressed: () {
-            // Open a dialog to ask to download in english or spanish
             showDialog(
               context: context,
               builder: (context) {
                 return AlertDialog.adaptive(
-                  title: Text("Download Resume"),
-                  content: Text(
+                  title: const Text("Download Resume"),
+                  content: const Text(
                       "Do you want to download the resume in English or Spanish?"),
                   actions: [
                     TextButton(
                       onPressed: () {
-                        final uri = Uri.parse(URL_RESUME_ENGLISH);
+                        final uri = Uri.parse(urlResumeEnglish);
                         launchUrl(uri)
                             .then((value) =>
                                 debugPrint("Launched English Resume"))
@@ -43,7 +42,7 @@ class ResumePage extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        final uri = Uri.parse(URL_RESUME_SPANISH);
+                        final uri = Uri.parse(urlResumeSpanish);
                         launchUrl(uri)
                             .then((value) =>
                                 debugPrint("Launched Spanish Resume"))
