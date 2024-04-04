@@ -63,7 +63,7 @@ class ResumePage extends StatelessWidget {
               },
             );
           },
-          child: Text(l10n.goToResume),
+          child: Text(l10n.navToResume),
         ),
       ],
     );

@@ -54,5 +54,9 @@
     "close": "Cerrar",
     "@close": {
       "description": "Cerrar texto"
-    } 
+    },
+    "navToResume": "Ver currículum",
+    "@navToResume": {
+      "description": "Ver currículum nav texto"
+    }
 }

@@ -54,5 +54,9 @@
   "close": "Close",
   "@close": {
     "description": "Close text"
+  },
+  "navToResume": "See resume",
+  "@navToResume": {
+    "description": "See resume nav text"
   } 
 }
