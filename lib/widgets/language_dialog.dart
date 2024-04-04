@@ -37,6 +37,12 @@ class LangauageDialog extends StatelessWidget {
               Navigator.of(context).pop();
             },
           ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: Text(l10n.close),
+          ),
         ],
       ),
     );
