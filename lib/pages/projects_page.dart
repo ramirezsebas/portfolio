@@ -13,45 +13,36 @@ class ProjectsPage extends StatelessWidget {
           style: Theme.of(context).textTheme.displayLarge,
         ),
         const SizedBox(height: 20),
-        GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
+        TextFormField(
+          decoration: InputDecoration(
+            hintText: "Search...",
+            prefixIcon: const Icon(Icons.search),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
           ),
-          itemCount: projects.length,
-          shrinkWrap: true,
-          itemBuilder: (context, index) {
-            final project = projects[index];
-            return Card(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      project.title,
-                      style: Theme.of(context).textTheme.headlineSmall,
-                      textAlign: TextAlign.center,
+        ),
+        const SizedBox(height: 50),
+        Wrap(
+          spacing: 20,
+          children: projects
+              .map(
+                (e) => SizedBox(
+                  width: 200,
+                  child: Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        children: [
+                          Text(e.description),
+                          const SizedBox(height: 20),
+                        ],
+                      ),
                     ),
-                    Text(
-                      project.description,
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodyMedium,
-                    ),
-                    Text(
-                      project.techStack,
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                            color: Colors
-                                .primaries[index % Colors.primaries.length],
-                          ),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-            );
-          },
+              )
+              .toList(),
         ),
       ],
     );
