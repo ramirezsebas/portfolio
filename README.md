@@ -17,12 +17,12 @@ I'm a dedicated developer who enjoys crafting beautiful and functional applicati
 
 - [X] Add a brief introduction about myself.
 - [ ] Include a list of projects with descriptions, technologies used, and demo links.
-- [ ] Provide instructions on how to run the projects locally.
+- [X] Provide instructions on how to run the projects locally.
 - [ ] Add contact information for users to reach out.
-- [ ] Customize the design and layout of the portfolio.
-- [ ] Ensure responsiveness for various devices.
+- [X] Customize the design and layout of the portfolio.
+- [X] Ensure responsiveness for various devices.
 - [ ] Implement smooth navigation and user experience.
-- [ ] Include a section showcasing my skills and expertise.
+- [X] Include a section showcasing my skills and expertise.
 - [ ] Optimize images and assets for faster loading times.
 - [ ] Test the portfolio across different browsers for compatibility.
 - [X] Add social media links for further engagement.
