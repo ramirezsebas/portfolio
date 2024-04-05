@@ -1,16 +1,55 @@
-# my_portfolio
 
-A new Flutter project.
+# Matias Ramirez's Portfolio
 
-## Getting Started
+This portfolio showcases my experience and skills using Flutter Web.
 
-This project is a starting point for a Flutter application.
+## Introduction
 
-A few resources to get you started if this is your first Flutter project:
+Welcome to my portfolio! I'm Matias Ramirez, a passionate developer with expertise in Flutter and Javascript/Typescript.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## About Me
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I'm a dedicated developer who enjoys crafting beautiful and functional applications. My journey with Flutter and javascript has been exciting, and I'm constantly learning and improving my skills to create innovative solutions.
+
+## Portfolio Structure
+
+## Todo List for Portfolio
+
+- [X] Add a brief introduction about myself.
+- [ ] Include a list of projects with descriptions, technologies used, and demo links.
+- [ ] Provide instructions on how to run the projects locally.
+- [ ] Add contact information for users to reach out.
+- [ ] Customize the design and layout of the portfolio.
+- [ ] Ensure responsiveness for various devices.
+- [ ] Implement smooth navigation and user experience.
+- [ ] Include a section showcasing my skills and expertise.
+- [ ] Optimize images and assets for faster loading times.
+- [ ] Test the portfolio across different browsers for compatibility.
+- [X] Add social media links for further engagement.
+- [ ] Incorporate a blog or updates section to share insights and experiences.
+- [X] Implement a dark mode/light mode toggle for user preference.
+- [ ] Optimize SEO for better visibility on search engines.
+- [ ] Ensure accessibility features for users with disabilities.
+- [ ] Continuously update the portfolio with new projects and skills.
+
+## How to Run
+
+To run the projects locally, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/ramirezsebas/portfolio.git`
+2. Navigate to the project directory: `cd portfolio`
+3. Run the Flutter project: `flutter run`
+
+## Contact Me
+
+Feel free to reach out to me if you have any questions, feedback, or collaboration opportunities:
+
+- **Email**: [ramirezmatias946@gmail.com]
+- **LinkedIn**: [[Your LinkedIn Profile](https://www.linkedin.com/in/matias-sebastian-ramirez-brizuela-75b62a199/)]
+- **GitHub**: [[Your GitHub Profile](https://github.com/ramirezsebas)]
+
+Let's connect and build something amazing together!
+
+---
+
+Thank you for visiting my portfolio! I hope you enjoy exploring my projects.
